@@ -58,6 +58,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/list_users")
                 .permitAll()
                 .and()
+                .oauth2Login()
+                .defaultSuccessUrl("/list_users")
+                .and()
                 .logout().logoutSuccessUrl("/").permitAll();
     }
 }

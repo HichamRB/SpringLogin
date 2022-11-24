@@ -17,7 +17,9 @@ public class AppController {
     private UserRepository repo;
 
     @GetMapping("")
-    public String viewHomePage(){
+    public String viewHomePage(Model model){
+        model.addAttribute("facebook", "oauth2/authorization/facebook");
+        model.addAttribute("google", "oauth2/authorization/google");
 
         return "index";
     }
@@ -28,6 +30,7 @@ public class AppController {
 
             return"signup_form";
         }
+
 
     @PostMapping("/process_register")
     public String processRegistration(User user) {
