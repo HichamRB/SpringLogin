@@ -18,6 +18,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
+@SuppressWarnings("deprecation")
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
